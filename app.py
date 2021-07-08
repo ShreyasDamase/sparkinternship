@@ -69,4 +69,4 @@ def details():
         dct.update({'name':nameofperson.name, 'Money':nameofperson.Money,'transfers':nameofperson.transfers,'Bank':nameofperson.bank,'server':nameofperson.email.split('@')[1]})
     return render_template('details.html',store=dct)
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False,ssl_context='adhoc')
