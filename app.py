@@ -45,12 +45,8 @@ def customers():
         sendname=Cust.query.filter_by(id=sender_id).first()
         receivename=Cust.query.filter_by(id=receiver_id).first()
         tra=sendname.transfers
-        print(sendname,receivename)
         if(sendname.Money<money):
             if(sendname.Money<0):
-                print(sendname,receivename)
-                print(send_pre_money,receie_pre_money,tra)
-                print('0 is executing')
                 sendname.Money=0
                 db.session.commit()
         else:
@@ -64,5 +60,13 @@ def customers():
     for i in Cust.query.all():
         lst.append(i)
     return render_template('viewallcust.html',store=lst)
+@app.route('/details',methods=['GET','POST'])
+def details():
+    dct=dict()
+    if(request.form.get('persdetail',False)):
+        u_id=int(request.form.get('persdetail'))
+        nameofperson=Cust.query.filter_by(id=u_id).first()
+        dct.update({'name':nameofperson.name, 'Money':nameofperson.Money,'transfers':nameofperson.transfers,'Bank':nameofperson.bank,'server':nameofperson.email.split('@')[1]})
+    return render_template('details.html',store=dct)
 if __name__ == "__main__":
     app.run(debug=True)
