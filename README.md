@@ -23,5 +23,4 @@ Install my-project with npm
 - [@omh](https://github.com/OMH-G/CodeLength)
 
   
-# sparkinternship
-Project on web development of Banking System.
+
