@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 ![Logo](https://www.totaltrainingsolutions.com/wp-content/uploads/2015/10/bank-processing-eLearning_Fotolia_88416727_Subscription_Monthly_M.jpg)
 
@@ -24,7 +23,5 @@ Install my-project with npm
 - [@omh](https://github.com/OMH-G/CodeLength)
 
   
-=======
 # sparkinternship
 Project on web development of Banking System.
->>>>>>> dedb7049460e57a79b9926ee2243bdd815ec6deb
