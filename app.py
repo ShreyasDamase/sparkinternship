@@ -6,7 +6,9 @@ app=Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI']="sqlite:///customer.sqlite3"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 db=SQLAlchemy(app)
-
+@app.before_first_request
+def create_tables():
+    db.create_all()
 class Cust(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
